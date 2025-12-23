@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.t3tracon.sepet.HelloController">
+   <children>
+      <Pane prefHeight="100.0" prefWidth="600.0" />
+      <Pane layoutY="100.0" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <ListView fx:id="basketList" layoutX="14.0" layoutY="15.0" prefHeight="245.0" prefWidth="193.0" />
+            <Button layoutX="77.0" layoutY="268.0" mnemonicParsing="false" onAction="#removeProduct" text="Remove from basket" />
+            <Text layoutX="236.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price without KDV Taxe: " />
+            <Text layoutX="236.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KDV Taxe: " />
+            <Text layoutX="236.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Final Price: " />
+            <Text fx:id="finalPrice" layoutX="300.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="kdv" layoutX="300.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="barePrice" layoutX="371.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fill="#279e00" layoutX="452.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " />
+            <Text fx:id="totalPrice" fill="#279e00" layoutX="489.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+         </children>
+      </Pane>
+      <TabPane prefHeight="100.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Mobile Phone">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="541.0" layoutY="20.0" mnemonicParsing="false" onAction="#addPhone" text="Add" />
+                        <ChoiceBox fx:id="modelChoiceBox" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
+                        <Text fx:id="phoneSpecsField" layoutX="230.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specs:" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Textile">
+                <content>
+                    <Pane prefHeight="200.0" prefWidth="200.0">
+                        <children>
+                            <Button layoutX="541.0" layoutY="20.0" mnemonicParsing="false" onAction="#addTextile" text="Add" />
+                            <ChoiceBox fx:id="textileChoiceBox" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
+                            <Text fx:id="textileSpecsField" layoutX="230.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specs:" />
+                        </children>
+                    </Pane>
+                </content>
+            </Tab>
+            <Tab text="Bread">
+                <content>
+                    <Pane prefHeight="200.0" prefWidth="200.0">
+                        <children>
+                            <Button layoutX="541.0" layoutY="20.0" mnemonicParsing="false" onAction="#addBread" text="Add" />
+                            <ChoiceBox fx:id="breadChoiceBox" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
+                            <Text fx:id="breadSpecsField" layoutX="230.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specs:" />
+                        </children>
+                    </Pane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
